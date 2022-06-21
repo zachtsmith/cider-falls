@@ -1,8 +1,8 @@
 /*
 
     This module contains all of the data, or state, for the
-    application. It exports two functions that allow other
-    modules to get copies of the state.
+    application. It exports three functions that allow other
+    modules to get copies of the information stored in the database.
 
 */
 
@@ -103,3 +103,16 @@ services: [{
         id: 10, name: "zip lines"
     }]
 }
+
+export const getGuests = () => {
+    return database.guests.map(guest => ({...guest}))
+}
+
+export const getParkAreas = () => {
+    return database.parkAreas.map(areas => ({...areas}))
+}
+
+export const getServices = () => {
+    return database.services.map(service => ({...service}))
+}
+
